@@ -4,3 +4,9 @@
   color: #2c3350;
   margin-top: 100px;
 }
+
+.form-group {
+  & > * {
+    margin-bottom: 20px;
+  }
+}

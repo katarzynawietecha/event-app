@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Sign in</h2>
+    <h2>Sign up</h2>
     <div class="form-group m-auto col-xs-12 col-sm-6 col-md-4">
       <input
         type="text"
@@ -15,10 +15,10 @@
       <button
         type="submit"
         class="btn btn-info"
-        @click="signIn">Sign in</button>
+        @click="signUp">Sign up</button>
         <p> {{ error.message }}</p>
-        <p>Not a user yet?
-          <router-link to="/signup">Sign up!</router-link>
+        <p>Already a user?
+          <router-link to="/signin">Sign in!</router-link>
         </p>
     </div>
   </div>
@@ -38,8 +38,8 @@ export default {
     }
   },
   methods: {
-    signIn(){
-      firebaseApp.auth().signInWithEmailAndPassword(this.email, this.password)
+    signUp(){
+      firebaseApp.auth().createUserWithEmailAndPassword(this.email, this.password)
         .catch(error => {
           this.error = error
         })

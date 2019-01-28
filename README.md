@@ -21,4 +21,5 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 ## Test user
 
 email: test12@test.pl
+
 password: test12

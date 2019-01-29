@@ -10,4 +10,8 @@ const config = {
   };
 
 export const firebaseApp = firebase.initializeApp(config)
+
+// Real time events database - it allows to share events on the spot
+// We access to database and create a new section called "events"
+// Firebase will listen for any interaction with this reference and automatically update our database and our code
 export const eventsRef = firebaseApp.database().ref().child("events")

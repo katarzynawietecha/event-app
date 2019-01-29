@@ -1,5 +1,5 @@
 <template>
-  <div class="m-auto col-xs-12 col-sm-10">
+  <div class="m-auto col-xs-12 col-sm-10 pb-5">
     <h3>Add an event <input type="checkbox" v-model="showForm" /></h3>
     <div class="form" v-if="showForm">
       <div class="form-group">
@@ -59,6 +59,12 @@ export default {
     addEvent(){
       this.event.email = this.$store.state.user.email;
       eventsRef.push(this.event)
+
+      this.event.title = "";
+      this.event.description = "";
+      this.event.date = "";
+      this.event.location = "";
+      this.event.email = "";
     }
   }
 }

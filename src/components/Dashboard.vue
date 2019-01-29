@@ -4,7 +4,13 @@
     <button class="btn btn-danger signout-btn" @click="signOut">Sign out</button>
     <hr>
     <AddEvent />
-    <p>{{ $store.state }}</p>
+    <div class="row col-sm-12 m-auto">
+      <EventItem
+        v-for="(item, index) in this.$store.state.events"
+        :event="item"
+        key="index"
+      />
+    </div>
   </div>
 </template>
 
@@ -12,6 +18,7 @@
 <script>
 import { firebaseApp, eventsRef } from "../firebaseApp"
 import AddEvent from "./AddEvent.vue"
+import EventItem from "./EventItem.vue"
 
 export default {
   methods: {
@@ -21,15 +28,18 @@ export default {
     }
   },
   components: {
-    AddEvent
+    AddEvent,
+    EventItem
   },
   mounted(){
+    // Realtime listener:
     eventsRef.on("value", snap => {
       let events = []
+      // Push event object from snap to local events array:
       snap.forEach(event => {
         events.push(event.val())
       })
-      console.log("events", events);
+     this.$store.dispatch("setEvents", events)
     })
   }
 }

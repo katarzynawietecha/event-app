@@ -10,11 +10,15 @@
     margin-bottom: 20px;
   }
 }
-.signout-btn {
+.signout-btn, .user {
   position: absolute;
   right: 10%;
-  top: 10%;
+  top: 3%;
   margin-top: 10px;
+}
+.user {
+  right: auto;
+  left: 10%;
 }
 input {
   vertical-align: middle;

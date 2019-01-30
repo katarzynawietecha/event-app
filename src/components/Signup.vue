@@ -16,7 +16,7 @@
         type="submit"
         class="btn btn-info"
         @click="signUp">Sign up</button>
-        <p> {{ error.message }}</p>
+        <p>{{ error.message }}</p>
         <p>Already a user?
           <router-link to="/signin">Sign in!</router-link>
         </p>

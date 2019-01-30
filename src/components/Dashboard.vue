@@ -1,6 +1,7 @@
 <template>
   <div>
     <h2>My events</h2>
+    <h6 class="user p-2">{{ $store.state.user.email }}</h6>
     <button class="btn btn-danger signout-btn" @click="signOut">Sign out</button>
     <hr>
     <AddEvent />
@@ -8,7 +9,7 @@
       <EventItem
         v-for="(item, index) in this.$store.state.events"
         :event="item"
-        key="index"
+        :key="index"
       />
     </div>
   </div>

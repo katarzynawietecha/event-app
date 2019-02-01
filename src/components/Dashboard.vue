@@ -10,8 +10,8 @@
         v-for="(item, index) in this.$store.state.events"
         :event="item"
         :key="index"
+        v-on="sortItems"
       />
-      <div id="object"></div>
     </div>
   </div>
 </template>
@@ -32,6 +32,13 @@ export default {
   components: {
     AddEvent,
     EventItem
+  },
+  computed: {
+    sortItems: function(){
+      this.$store.state.events.sort((a, b) => {
+        return new Date(a.date) - new Date(b.date)
+      })
+    }
   },
   mounted(){
     // Realtime listener:

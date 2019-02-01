@@ -11,7 +11,3 @@ export const signOut = ({commit}) => {
 export const setEvents = ({commit}, events_payload) => {
   commit(types.SET_EVENTS, events_payload)
 }
-
-export const cancelEvent = ({commit}, events_payload) => {
-  commit(types.CANCEL_EVENT, events_payload)
-}

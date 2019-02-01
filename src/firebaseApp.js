@@ -9,7 +9,8 @@ const config = {
     messagingSenderId: "254976701401"
   };
 
-export const firebaseApp = firebase.initializeApp(config)
+export const firebaseApp = firebase.initializeApp(config);
+// export const firebase = firebase
 
 // Real time events database - it allows to share events on the spot
 // We access to database and create a new section called "events"

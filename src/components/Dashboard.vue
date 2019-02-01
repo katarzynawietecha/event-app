@@ -11,6 +11,7 @@
         :event="item"
         :key="index"
       />
+      <div id="object"></div>
     </div>
   </div>
 </template>

@@ -37,7 +37,6 @@ export default {
           })
         })
       })
-      this.$store.dispatch("cancelEvent")
     }
   }
 }

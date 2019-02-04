@@ -2,7 +2,7 @@
   <div class="m-auto col-xs-12 col-sm-10 pb-5">
     <h3>Add an event <input type="checkbox" v-model="showForm" /></h3>
     <div class="form" v-if="showForm">
-      <p v-if="errors.length" class="alert alert-danger">
+      <p v-if="errors.length" class="errors alert alert-danger">
         <ul>
           <li v-for="error in errors">{{ error }}</li>
         </ul>
@@ -80,7 +80,7 @@ export default {
         if(!this.event.date){
           this.errors.push("Date is required. ");
         }
-        if(!this.event.date){
+        if(!this.event.location){
           this.errors.push("Location is required. ");
         }
         if((this.allTitles.indexOf(this.event.title) != -1)){

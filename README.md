@@ -1,6 +1,28 @@
 # event-app
 
-> A Vue.js project
+
+**Basic informations**
+
+This project was created with Vue course (by David J. Katz). I added some options like: delete event and modify event.
+
+
+**License**
+
+This project is released under the MIT License.
+
+
+**Demo**
+
+(in progress)
+
+
+**Technologies Used**
+
+* HTML,
+* CSS,
+* JavaScript,
+* Vue.js.
+
 
 ## Build Setup
 

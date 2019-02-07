@@ -17,11 +17,11 @@
       </div>
       <div class="form-group">
         <label>Description</label>
-        <input
+        <textarea
           type="text"
           placeholder="Write description of event"
           v-model="event.description"
-          class="form-control" />
+          class="form-control"></textarea>
       </div>
       <div class="form-group">
         <label>Date</label>

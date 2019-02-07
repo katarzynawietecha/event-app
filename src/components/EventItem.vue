@@ -22,8 +22,11 @@
     <modal
       v-show="isModalVisible"
       @close="closeModal"
-      :method="modifyEvent"
-       />
+      :title=clickedEvent.title
+      :description=clickedEvent.description
+      :date=clickedEvent.date
+      :location=clickedEvent.location
+      />
   </div>
 </template>
 
@@ -34,7 +37,13 @@ import Modal from "./Modal.vue"
 export default {
   data(){
     return {
-      isModalVisible: false
+      isModalVisible: false,
+      clickedEvent: {
+        title: "",
+        description: "",
+        date: "",
+        location: ""
+      }
     }
   },
   props: ["event"],
@@ -55,10 +64,10 @@ export default {
     },
     showModal(){
       this.isModalVisible = true;
-    },
-    modifyEvent(){
-      console.log(this.event.title);
-      let title = this.event.title;
+      this.clickedEvent.title = this.event.title;
+      this.clickedEvent.description = this.event.description;
+      this.clickedEvent.date = this.event.date;
+      this.clickedEvent.location = this.event.location;
     },
     closeModal(){
       this.isModalVisible = false;

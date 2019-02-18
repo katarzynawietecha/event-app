@@ -10,19 +10,43 @@
       </ul>
       <button
         type="button"
+        class="btn btn-info"
+        @click="showModal">See more</button>
+      <button
+        type="button"
         class="btn btn-warning text-white"
         v-if="event.email === $store.state.user.email"
         @click="cancelEvent">Cancel the event</button>
     </div>
+    <ModalInfo
+      v-show="isModalVisible"
+      @close="closeModal"
+      :title=clickedEvent.title
+      :description=clickedEvent.description
+      :date=clickedEvent.date
+      :location=clickedEvent.location
+    />
   </div>
 
 </template>
 
 <script>
 import { eventsRef } from "../firebaseApp"
+import ModalInfo from "./ModalInfo.vue"
 
 export default {
   props: ["event"],
+  data(){
+    return{
+      isModalVisible: false,
+      clickedEvent: {
+        title: "",
+        description: "",
+        date: "",
+        location: ""
+      }
+    }
+  },
   methods: {
     cancelEvent(){
       const eventTitle = this.event.title;
@@ -37,7 +61,20 @@ export default {
           })
         })
       })
+    },
+    showModal(){
+      this.isModalVisible = true;
+      this.clickedEvent.title = this.event.title;
+      this.clickedEvent.description = this.event.description;
+      this.clickedEvent.date = this.event.date;
+      this.clickedEvent.location = this.event.location;
+    },
+    closeModal(){
+      this.isModalVisible = false;
     }
+  },
+  compnents: {
+    ModalInfo
   }
 }
 </script>

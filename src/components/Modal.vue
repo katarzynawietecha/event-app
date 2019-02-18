@@ -1,3 +1,4 @@
+
 <template>
   <transition name="modal-fade">
       <div class="modal-backdrop">
@@ -8,7 +9,7 @@
           <header
             class="modal-header text-info"
             id="modalTitle">
-            <slot name="header">{{ event.title }}
+            <slot name="header">{{ title }}
               <button
                 type="button"
                 class="btn-close text-info"
@@ -20,14 +21,7 @@
             class="modal-body"
             id="modalDescription">
             <slot name="body">
-              <div class="event-card">
-                <p class="card-text">{{ event.description }}</p>
-                <ul>
-                  <li>Date: {{ event.date }}</li>
-                  <li>Location: {{ event.location }}</li>
-                  <li>Host: {{ event.email }}</li>
-                </ul>
-              </div>
+              <p>{{ description }}</p>
             </slot>
           </section>
           <footer class="modal-footer">
@@ -46,14 +40,10 @@
 
 <script>
 export default {
-  props: ["title", "description", "date", "location"],
+  props: ["title", "description"],
   methods: {
     close(){
       this.$emit('close');
-      console.log(this.title);
-      console.log(this.description);
-      console.log(this.date);
-      console.log(this.location);
     }
   }
 }

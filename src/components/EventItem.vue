@@ -10,7 +10,7 @@
       <button
           type="button"
           class="btn btn-info text-white m-1"
-          @click="showModal">Description</button>
+          @click="showModal">Details</button>
       <button
         type="button"
         class="btn btn-warning text-dark m-1"
@@ -48,7 +48,6 @@ export default {
   methods: {
     cancelEvent(){
       let eventTitle = this.event.title;
-      console.log(eventTitle);
       eventsRef.on('value', snapshot => {
         snapshot.forEach((child) => {
           child.forEach((childChild) => {

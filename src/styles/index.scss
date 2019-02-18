@@ -68,8 +68,8 @@ input {
    flex-direction: column;
    width: 90%;
    height: 90%;
-   margin-left: 5%;
-   margin-top: 4%;
+   margin-left: 3%;
+   margin-top: 3%;
  }
  .modal-header,
  .modal-footer {
@@ -87,7 +87,13 @@ input {
  }
  .modal-body {
    position: relative;
-   padding: 20px 10px;
+   padding: 20px;
+
+   p {
+     text-align: left;
+     white-space: pre-line;
+     margin-bottom: 0;
+   }
  }
  .btn-close {
    border: none;

@@ -17,8 +17,9 @@
       </div>
       <div class="form-group">
         <label>Description</label>
-        <input
+        <textarea
           type="text"
+          rows="4"
           placeholder="Write description of event"
           v-model="event.description"
           class="form-control" />
@@ -96,6 +97,13 @@ export default {
         this.event.date = "";
         this.event.location = "";
       }
+      //
+      // // Textarea breaks
+      // var enteredText = textarea.val();
+      // var characterCount = enteredText.length; // One line break entered returns 1
+      // enteredText = textareaVariableName.val();
+      // numberOfLineBreaks = (enteredText.match(/\n/g)||[]).length;
+      // characterCount = enteredText.length + numberOfLineBreaks;
     }
   }
 }
